@@ -2,13 +2,35 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Search } from 'lucide-react';
+type DiagnosticResult = {
+  model: string;
+  manufacturer: string;
+  locked: boolean;
+  blacklisted: boolean;
+  batteryHealth: number;
+  lastSeen: string;
+  blocklist: string;
+  make: string;
+  serial: string;
+  carrier: string;
+  intendedCarrier: string;
+  memory: string;
+  color: string;
+  simLock: string;
+  fmip: string;
+  coo: string;
+  att: string;
+  tmobile: string;
+  verizon: string;
+  history: string;
+};
 
 export default function DiagnosticsPage() {
   const [imei, setImei] = useState('');
   const [orderNumber, setOrderNumber] = useState('');
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<DiagnosticResult | null>(null);
   const [error, setError] = useState('');
   const [copied, setCopied] = useState(false);
   const [searchImei, setSearchImei] = useState('');
@@ -58,9 +80,10 @@ export default function DiagnosticsPage() {
       await new Promise((r) => setTimeout(r, 800));
       setResult(simulatedResponse);
       setRecentChecks(prev => [imei, ...prev.slice(0, 4)]);
-    } catch (err) {
+    } catch {
       setError('Failed to fetch device info.');
-    } finally {
+    }
+    finally {
       setLoading(false);
     }
   };
