@@ -220,6 +220,7 @@ export default function DiagnosticsPage() {
           <a href="https://www.backmarket.com/en-us" className="hover:underline">Knowledge Base</a>
           <a href="https://help.backmarket.com/hc/en-us/requests/new" className="hover:underline">Contact Support</a>
         </div>
+        <div className='flex flex-wrap justify-center mt-8'> {new Date().getFullYear()} © Back Market</div>
       </footer>
     </div>
   );
