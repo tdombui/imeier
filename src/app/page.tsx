@@ -215,10 +215,10 @@ export default function DiagnosticsPage() {
 
       <footer className="mt-12 text-sm text-white/70">
         <div className="flex flex-wrap justify-center gap-6">
-          <a href="#" className="hover:underline">FAQ</a>
-          <a href="#" className="hover:underline">Help Center</a>
-          <a href="#" className="hover:underline">Knowledge Base</a>
-          <a href="#" className="hover:underline">Contact Support</a>
+          <a href="https://www.backmarket.com/en-us/help" className="hover:underline">FAQ</a>
+          <a href="https://www.backmarket.com/en-us/help" className="hover:underline">Help Center</a>
+          <a href="https://www.backmarket.com/en-us" className="hover:underline">Knowledge Base</a>
+          <a href="https://help.backmarket.com/hc/en-us/requests/new" className="hover:underline">Contact Support</a>
         </div>
       </footer>
     </div>
